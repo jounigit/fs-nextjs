@@ -4,11 +4,13 @@ import { getBlogs } from "../services/blogs"
 const Blogs = () => {
   const blogs = getBlogs()
 
+  const sortedBlogs = [...blogs].sort((a, b) => b.likes - a.likes)
+
   return (
     <div className="m-4">
       <h2 className="text-2xl text-align: start">blogs</h2>
       <ul>
-        {blogs.map(blog => (
+        {sortedBlogs.map(blog => (
           <li key={blog.id}>
             <Link href={`/blogs/${blog.id}`}>
                 <h3 className="font-bold hover:underline">{blog.title}</h3>
