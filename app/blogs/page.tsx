@@ -35,6 +35,7 @@ const Blogs = async ({ searchParams, }: {
       <h2 className="text-2xl text-align: start">blogs</h2>
       {searchButton}
       <ul>
+        <p>--------------------------</p>
         {sortedBlogs.map(blog => (
           <li key={blog.id}>
             <Link href={`/blogs/${blog.id}`}>
